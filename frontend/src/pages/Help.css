@@ -1,0 +1,397 @@
+/* ===============================================
+   HELP PAGE CSS - COMPLETE STYLESHEET
+   Matches the animated navbar design language
+   Includes: gradients, card animations, responsive grid
+   =============================================== */
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.help-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff 0%, #d9e2f5 100%);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+/* Back Button - Creative & Animated */
+.back-btn {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a2b75, #14245e);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.back-btn:hover {
+  transform: scale(1.1) rotate(-5deg);
+  background: linear-gradient(135deg, #4cd137, #3aa824);
+  box-shadow: 0 8px 20px rgba(76, 209, 55, 0.4);
+}
+
+.back-btn:active {
+  transform: scale(0.95);
+}
+
+/* Help Header Section */
+.help-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.help-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1a2b75, #2d4bb7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.help-header p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  font-weight: 500;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Help Grid - Responsive Cards Layout */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+/* Creative Help Cards */
+.help-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.help-card:nth-child(1) { animation-delay: 0.1s; }
+.help-card:nth-child(2) { animation-delay: 0.2s; }
+.help-card:nth-child(3) { animation-delay: 0.3s; }
+.help-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.help-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.2);
+  border-color: rgba(76, 209, 55, 0.5);
+  background: white;
+}
+
+.help-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a2b75;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.help-card:hover h3 {
+  transform: translateX(5px);
+  color: #4cd137;
+}
+
+.help-card p {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #ffffff, #f8faff);
+  border-radius: 32px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(76, 209, 55, 0.2);
+  animation: fadeInUp 0.6s ease-out 0.5s backwards;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a2b75;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.contact-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4cd137, #1a2b75);
+  border-radius: 3px;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin: 0.8rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.contact-section p:hover {
+  transform: translateX(5px);
+}
+
+.contact-section p::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #4cd137;
+}
+
+.contact-section p:first-of-type::before {
+  content: "\f0e0"; /* Email icon */
+}
+
+.contact-section p:last-of-type::before {
+  content: "\f095"; /* Phone icon */
+}
+
+/* Contact Button */
+.contact-btn {
+  margin-top: 2rem;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #4cd137, #3aa824);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(76, 209, 55, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(76, 209, 55, 0.5);
+  background: linear-gradient(135deg, #3aa824, #2e8e1e);
+}
+
+.contact-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .help-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .help-header h1 {
+    font-size: 2rem;
+  }
+
+  .help-header p {
+    font-size: 1rem;
+  }
+
+  .help-grid {
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .help-card {
+    padding: 1.5rem;
+  }
+
+  .help-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-section {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .help-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Optional: Add floating animation to contact button */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.contact-btn {
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.contact-btn:hover {
+  animation: none;
+}
+
+/* Style for Font Awesome (if you're using icons) */
+/* If you don't have Font Awesome, the pseudo-elements will show text */
+/* Add this to use emoji fallback */
+.contact-section p:first-of-type::before {
+  content: "✉️ ";
+  font-family: none;
+}
+
+.contact-section p:last-of-type::before {
+  content: "📞 ";
+  font-family: none;
+}
+
+/* Premium Glassmorphism Effect for Cards */
+.help-card {
+  background: rgba(255, 255, 255, 0.85);
+  position: relative;
+  overflow: hidden;
+}
+
+.help-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.help-card:hover::before {
+  left: 100%;
+}
+
+/* Animated gradient border for contact section */
+.contact-section {
+  position: relative;
+  background: white;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4cd137, #1a2b75, #4cd137, #1a2b75);
+  background-size: 400%;
+  border-radius: 34px;
+  z-index: -1;
+  animation: borderGlow 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-section:hover::before {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

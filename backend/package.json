@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "MiniMartHub Backend API",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "seed": "node seeder.js",
+    "check": "node --check server.js && node --check config/db.js && node --check middleware/authMiddleware.js && node --check routes/authRoutes.js && node --check routes/productRoutes.js && node --check routes/orderRoutes.js && node --check routes/cartRoutes.js && node --check controllers/AuthController.js && node --check controllers/ProductController.js && node --check controllers/OrderController.js && node --check controllers/CartController.js && node --check models/User.js && node --check models/Product.js && node --check models/Order.js && node --check models/Cart.js && node --check models/Seller.js"
+  },
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^5.2.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.5.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

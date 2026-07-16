@@ -1,0 +1,330 @@
+:root {
+  --mmh-navy: #1B2D6B;
+  --mmh-navy-dark: #152050;
+  --mmh-green: #57d132;
+  --mmh-green-hover: #46bb24;
+  --mmh-white: #ffffff;
+  --mmh-text-muted: rgba(255, 255, 255, 0.6);
+  --mmh-text-faint: rgba(255, 255, 255, 0.4);
+  --mmh-border: rgba(255, 255, 255, 0.1);
+  --mmh-border-light: rgba(255, 255, 255, 0.08);
+  --mmh-green-bg: rgba(87, 209, 50, 0.12);
+  --mmh-green-border: rgba(87, 209, 50, 0.3);
+}
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+
+.mmh-footer {
+  background: linear-gradient(
+    160deg,
+    var(--mmh-navy) 0%,
+    var(--mmh-navy-dark) 100%
+  );
+  color: white;
+  margin-top: 40px;
+}
+
+/* ========================= */
+/* TOP GRID                  */
+/* ========================= */
+
+.mmh-footer__top {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+  gap: 36px;
+  padding: 48px 40px 36px;
+  border-bottom: 1px solid var(--mmh-border);
+}
+
+/* ========================= */
+/* BRAND COLUMN              */
+/* ========================= */
+
+.mmh-footer__brand-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================= */
+/* LOGO                      */
+/* ========================= */
+
+.mmh-footer__logo-img {
+  height: 75px;
+  object-fit: contain;
+}
+
+.mmh-footer__tagline {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--mmh-green);
+  text-transform: uppercase;
+  margin-top: 10px;        /* FIX: was missing, logo and tagline were colliding */
+  margin-bottom: 14px;
+}
+
+/* ========================= */
+/* DESCRIPTION               */
+/* ========================= */
+
+.mmh-footer__desc {
+  font-size: 14px;
+  color: var(--mmh-text-muted);
+  line-height: 1.8;
+  margin-bottom: 20px;     /* FIX: no spacing before social icons */
+}
+
+/* ========================= */
+/* SOCIAL ICONS              */
+/* ========================= */
+
+.mmh-footer__socials {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;        /* push to bottom of brand col if space allows */
+}
+
+.mmh-footer__social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--mmh-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mmh-text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mmh-footer__social:hover {
+  background: var(--mmh-green-bg);
+  border-color: var(--mmh-green-border);
+  color: var(--mmh-green);
+  transform: translateY(-3px);
+}
+
+/* ========================= */
+/* COLUMN TITLES             */
+/* ========================= */
+
+.mmh-footer__col-title {
+  font-size: 16px;         /* FIX: was 18px — too large for a footer column */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: white;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.mmh-footer__col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--mmh-green);
+  border-radius: 2px;
+}
+
+/* ========================= */
+/* LINKS                     */
+/* ========================= */
+
+.mmh-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;               /* FIX: was missing — browser adds default margin */
+}
+
+.mmh-footer__link {
+  display: inline-block;
+  margin-bottom: 12px;     /* FIX: was 14px — slightly too wide */
+  font-size: 14px;         /* FIX: was missing — inherited inconsistently */
+  color: var(--mmh-text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mmh-footer__link:hover {
+  color: var(--mmh-green);
+  transform: translateX(4px);
+}
+
+/* Highlight link (Become a Seller) */
+.mmh-footer__link--highlight {
+  color: var(--mmh-green);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.mmh-footer__link--highlight:hover {
+  color: var(--mmh-green-hover);
+}
+
+/* ========================= */
+/* CONTACT                   */
+/* ========================= */
+
+.mmh-footer__contact-item {
+  margin-bottom: 16px;
+}
+
+.mmh-footer__contact-label {
+  font-size: 11px;
+  color: var(--mmh-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.mmh-footer__contact-value {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* FIX: contact email/phone links had no style — looked broken */
+.mmh-footer__contact-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease;
+}
+
+.mmh-footer__contact-link:hover {
+  color: var(--mmh-green);
+}
+
+/* ========================= */
+/* MIDDLE                    */
+/* ========================= */
+
+.mmh-footer__mid {
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--mmh-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ========================= */
+/* BADGES                    */
+/* ========================= */
+
+.mmh-footer__badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mmh-footer__badge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--mmh-border-light);
+  border-radius: 20px;
+  padding: 7px 14px;
+  color: var(--mmh-green);
+  font-size: 13px;          /* FIX: was missing on span inside badge */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: 0.3s ease;
+}
+
+.mmh-footer__badge:hover {
+  background: var(--mmh-green-bg);
+  border-color: var(--mmh-green-border);
+}
+
+/* Green dot inside badge */
+.mmh-footer__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mmh-green);
+  flex-shrink: 0;
+}
+
+.mmh-footer__mid-text {
+  font-size: 12px;
+  color: var(--mmh-text-faint);
+}
+
+/* ========================= */
+/* BOTTOM                    */
+/* ========================= */
+
+.mmh-footer__bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mmh-footer__copy {
+  font-size: 13px;
+  color: var(--mmh-text-faint);
+}
+
+.mmh-footer__copy span {
+  color: var(--mmh-green);
+  font-weight: 600;
+}
+
+/* ========================= */
+/* BOTTOM LINKS              */
+/* ========================= */
+
+.mmh-footer__bottom-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.mmh-footer__bottom-link {
+  font-size: 12px;
+  color: var(--mmh-text-faint);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mmh-footer__bottom-link:hover {
+  color: var(--mmh-green);
+}
+
+/* ========================= */
+/* RESPONSIVE                */
+/* ========================= */
+
+@media (max-width: 950px) {
+  .mmh-footer__top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .mmh-footer__top {
+    grid-template-columns: 1fr;
+    padding: 35px 20px;
+  }
+
+  .mmh-footer__mid,
+  .mmh-footer__bottom {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mmh-footer__bottom-links {
+    gap: 12px;
+  }
+}

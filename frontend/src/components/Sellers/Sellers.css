@@ -1,0 +1,344 @@
+/* =============================================
+   SELLERS — MiniMartHub Theme
+   Navy #172b78 · White · Green #57d132
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy-deep:   #172b78;
+  --navy-mid:    #1e3590;
+  --navy-light:  #2a44a8;
+
+  --green-vivid: #57d132;
+  --green-mid:   #46bb24;
+  --green-soft:  #edfce6;
+  --green-glow:  rgba(87, 209, 50, 0.28);
+
+  --white:       #ffffff;
+  --off-white:   #f5f7fb;
+  --border:      #e2e8f4;
+
+  --text-primary:   #172b78;
+  --text-secondary: #3d5080;
+  --text-muted:     #8896b3;
+
+  --shadow-sm:    0 1px 4px rgba(23, 43, 120, 0.06);
+  --shadow-card:  0 2px 12px rgba(23, 43, 120, 0.08);
+  --shadow-hover: 0 8px 28px rgba(23, 43, 120, 0.15);
+  --shadow-glow:  0 4px 16px rgba(87, 209, 50, 0.30);
+
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+
+  --font-body: 'Inter', sans-serif;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ══════════════════════════════
+   SECTION
+══════════════════════════════ */
+.sellers {
+  width: 100%;
+  padding: 52px 36px;
+  background: var(--off-white);
+  font-family: var(--font-body);
+}
+
+/* ── Header ── */
+.sellers-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.sellers-header h2 {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--navy-deep);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sellers-header p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 7px;
+  font-weight: 400;
+}
+
+/* ── Grid ── */
+.sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════
+   SELLER CARD
+══════════════════════════════ */
+.seller-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition),
+              border-color var(--transition);
+}
+
+/* top accent strip — navy → green on hover */
+.seller-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--navy-deep);
+  border-radius: 0;
+  transition: background var(--transition);
+  z-index: 1;
+}
+
+.seller-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(23, 43, 120, 0.15);
+  border-color: var(--green-vivid);
+}
+
+.seller-card:hover::before {
+  background: var(--green-vivid);
+}
+
+/* ── Image ── */
+.seller-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--off-white);
+}
+
+.seller-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.32s ease;
+}
+
+.seller-card:hover .seller-image img {
+  transform: scale(1.05);
+}
+
+/* ── Top-seller Badge ── */
+.seller-badge {
+  position: absolute;
+  right: 10px;
+  z-index: 2;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--green-vivid);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  top: auto;
+  bottom: calc(100% - 75% - 3px);
+}
+
+/* Simpler absolute positioning anchored from image top */
+.seller-image + .seller-badge,
+.seller-card .seller-badge {
+  position: absolute;
+  top: calc(75% - 14px);
+  right: 10px;
+  z-index: 2;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--green-vivid);
+  color: var(--white);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Card Body ── */
+.seller-content {
+  padding: 14px 15px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+/* Store row: avatar + name */
+.seller-store-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.seller-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2d3864;
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+/* Store name */
+.seller-content h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2d3864;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  transition: color var(--transition);
+}
+
+.seller-card:hover .seller-content h3 {
+  color: var(--navy-deep);
+}
+
+/* Category/Location pill */
+.seller-content p {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #1a6b06;
+  background: var(--green-soft);
+  padding: 2px 9px;
+  border-radius: 999px;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Meta row: rating + product count */
+.seller-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1px;
+}
+
+.seller-rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.seller-rating svg,
+.seller-rating .star-icon {
+  color: #f59e0b;
+  width: 12px;
+  height: 12px;
+}
+
+.seller-products {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Visit Store Button */
+.seller-content button {
+  margin-top: auto;
+  padding: 9px 0;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: #2d3864;
+  color: var(--white);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), box-shadow var(--transition),
+              transform var(--transition);
+}
+
+.seller-content button:hover {
+  background: var(--green-vivid);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+/* ── View All Sellers Button ── */
+.view-all-sellers-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.view-all-sellers-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--navy-deep);
+  border: 1px solid #2d3864;
+  padding: 10px 32px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.view-all-sellers-btn:hover {
+  background: var(--green-vivid);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 1024px) {
+  .sellers { padding: 40px 24px; }
+}
+
+@media (max-width: 768px) {
+  .sellers { padding: 32px 16px; }
+  .sellers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .seller-content {
+    padding: 12px 12px 13px;
+    gap: 5px;
+  }
+  .seller-content h3 { font-size: 0.82rem; }
+}

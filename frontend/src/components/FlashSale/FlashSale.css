@@ -1,0 +1,242 @@
+.flash-sale{
+  width: 100%;
+
+  padding: 70px 50px;
+
+  background: linear-gradient(
+    135deg,
+    #fff5f2,
+    #ffe9e2
+  );
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.flash-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.flash-header h2{
+  font-size: 42px;
+  font-weight: 700;
+
+  color: #ff4d2d;
+}
+
+.flash-header p{
+  margin-top: 10px;
+
+  font-size: 16px;
+
+  color: #666;
+}
+
+/* =========================
+   TIMER
+========================= */
+
+.flash-timer{
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #172b78;
+}
+
+.flash-timer span{
+  width: 60px;
+  height: 60px;
+
+  border-radius: 14px;
+
+  background: #172b78;
+
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow:
+    0 6px 18px rgba(23,43,120,0.18);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.flash-grid{
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 30px;
+}
+
+/* =========================
+   LINK
+========================= */
+
+.flash-link{
+  text-decoration: none;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.flash-card{
+  background: white;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
+}
+
+.flash-card:hover{
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 14px 28px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.flash-image{
+  position: relative;
+
+  width: 100%;
+  height: 240px;
+
+  overflow: hidden;
+}
+
+.flash-image img{
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.4s ease;
+}
+
+.flash-card:hover img{
+  transform: scale(1.08);
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.flash-badge{
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  background: #ff4d2d;
+
+  color: white;
+
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.flash-content{
+  padding: 22px;
+}
+
+.flash-content h3{
+  font-size: 22px;
+  font-weight: 600;
+
+  color: #172b78;
+}
+
+/* =========================
+   PRICE
+========================= */
+
+.flash-price{
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.flash-new{
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #ff4d2d;
+}
+
+.flash-old{
+  font-size: 15px;
+
+  color: #999;
+
+  text-decoration: line-through;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 768px){
+
+  .flash-sale{
+    padding: 55px 20px;
+  }
+
+  .flash-header{
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .flash-header h2{
+    font-size: 32px;
+  }
+
+  .flash-timer{
+    font-size: 18px;
+  }
+
+  .flash-timer span{
+    width: 50px;
+    height: 50px;
+  }
+}
